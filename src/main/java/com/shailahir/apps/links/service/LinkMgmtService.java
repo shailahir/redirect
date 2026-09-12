@@ -2,6 +2,7 @@ package com.shailahir.apps.links.service;
 
 import com.shailahir.apps.links.dtos.CreateLinkReqDto;
 import com.shailahir.apps.links.dtos.LinkResDto;
+import com.shailahir.apps.links.dtos.PaginatedResDto;
 import com.shailahir.apps.links.dtos.UpdateLinkReqDto;
 
 public interface LinkMgmtService {
@@ -11,4 +12,8 @@ public interface LinkMgmtService {
     boolean doesShortLinkAlreadyExists(String shortLink);
 
     LinkResDto updateLink(UpdateLinkReqDto linkReq);
+
+    PaginatedResDto<LinkResDto> getAllLinks(int pageNumber, int pageSize);
+
+//    PaginatedResDto<LinkResDto> getMyLinks(int pageNumber, int pageSize);
 }
