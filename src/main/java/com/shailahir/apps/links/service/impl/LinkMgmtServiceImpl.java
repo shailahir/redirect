@@ -3,6 +3,7 @@ package com.shailahir.apps.links.service.impl;
 import com.shailahir.apps.links.dao.LinkMgmtDao;
 import com.shailahir.apps.links.dtos.CreateLinkReqDto;
 import com.shailahir.apps.links.dtos.LinkResDto;
+import com.shailahir.apps.links.dtos.PaginatedResDto;
 import com.shailahir.apps.links.dtos.UpdateLinkReqDto;
 import com.shailahir.apps.links.entity.Link;
 import com.shailahir.apps.links.exception.LinkUpdateFailedException;
@@ -55,6 +56,12 @@ public class LinkMgmtServiceImpl implements LinkMgmtService {
         Link savedLink = this.linkMgmtDao.updateLink(link);
 
         return this.linkTransformer.toLinkResDto(savedLink);
+    }
+
+    @Override
+    public PaginatedResDto<LinkResDto> getAllLinks(int pageNumber, int pageSize) {
+        // TODO: Implement
+        return null;
     }
 
     private int getNextAvailableVersion(String shortLink) {
